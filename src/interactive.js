@@ -96,7 +96,7 @@ export function listItem(elem) {
 /* eslint-disable import/prefer-default-export */
 export function dragAndDrop() {
   todoList.innerHTML = '';
-  todoTasks.forEach((elem) => {
+  todoTasks.forEach((elem, i) => {
     const item = listItem(elem);
     todoList.appendChild(item);
   });

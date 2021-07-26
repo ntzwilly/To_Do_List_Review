@@ -18,6 +18,10 @@ main {
     -5px 0 8px -4px rgba(0, 0, 0, 0.8);
 }
 
+.d-flex {
+  display: flex;
+}
+
 .todo-container {
   display: flex;
   flex-direction: column;
