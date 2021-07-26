@@ -12,7 +12,9 @@ function createTask() {
 
   todoForm.addEventListener('submit', () => {
     const newToDo = taskInput.value;
-    const newTodoList = { description: newToDo, completed: false, index: todoTasks.length + 1, checked: false, id,}
+    const newTodoList = {
+      description: newToDo, completed: false, index: todoTasks.length + 1, checked: false, id,
+    };
     if (newToDo) {
       todoTasks.push(newTodoList);
       savedList();
@@ -25,7 +27,7 @@ function editTask(input, elem, form) {
   input.setAttribute('name', elem.id);
   input.addEventListener('input', (event) => {
     newValue = event.target.value;
-    e.preventDefault();
+    event.preventDefault();
   });
 
   form.addEventListener('submit', (event) => {
@@ -40,8 +42,8 @@ function deleteTask(element) {
   todoTasks.splice(element, 1);
   todoTasks.forEach((task, i) => {
     task.id = i;
-    task.index = i + 1; 
-  })
+    task.index = i + 1;
+  });
 
   localStorage.clear();
   localStorage.setItem('ToDo', JSON.stringify(todoTasks));
@@ -53,12 +55,14 @@ function clearTasks() {
 
     pendingTasks.forEach((task, i) => {
       task.id = i;
-      task.index = i + 1; 
-    })
+      task.index = i + 1;
+    });
 
     localStorage.setItem('ToDo', JSON.stringify(pendingTasks));
     window.location.reload();
   });
 }
 
-export { clearTasks, deleteTask, editTask, createTask }
+export {
+  clearTasks, deleteTask, editTask, createTask,
+};
